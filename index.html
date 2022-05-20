@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Tip Estimator</title>
+</head>
+
+<div class="main"></div>
+<h1>Tip Estimator</h1>
+<br>
+<input type="number" placeholder="How much was your tab?" class="box">
+<button type="button" class="btn"> Tip </button>
+
+<body>
+
+    <script>
+        const button = document.querySelector("button");
+        const output = document.querySelector(".main");
+
+        console.log(button);
+
+        button.addEventListener("click", function () {
+            const cost = document.querySelector("input");
+            console.log(cost.value * 0.20);
+
+            let tip = (cost.value * 0.20).toFixed(2);
+            let temp = `<h1> Estimated tip $${tip} on $${cost.value}</h1>`;
+            output.innerHTML = temp;
+
+  setTimeout(function(){
+window.location.reload();
+  },5000)
+
+
+        });
+    </script>
+</body>
+
+</html>
